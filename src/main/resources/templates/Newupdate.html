@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Student Management System</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+</head>
+<body>
+<nav class="navbar navbar-expand-md bg-light navbar-dark">
+
+  <a href="/users">User Management System</a>
+</nav>
+<br>
+<br>
+
+
+	<div >
+		<div >
+			<div >
+				<h1 class = "text-center"> update the  user  </h1>
+				<div >
+					<form th:action="@{/updateuser/{id} (id=${username.id})}" th:object = "${username}" method="POST">
+						<div >
+							<label> user Name </label>
+							<input
+							type = "text"
+							name = "fullName"
+							th:field = "*{name}"
+							class = "form-control"
+							placeholder="Enter user full name" 
+							/>
+						</div>
+						
+						<div >
+							<label> user email for contact  </label>
+							<input
+							type = "text"
+							name = "lastName"
+							th:field = "*{email}"
+							class = "form-control"
+							placeholder="Enter user email " 
+							/>
+						</div>
+						
+						<div >
+							<label> user city  </label>
+							<input
+							type = "text"
+							name = "email"
+							th:field = "*{city}"
+							class = "form-control"
+							placeholder="Enter user city" 
+							/>
+						</div>
+						
+						<div >
+							<button type="submit" >
+								Submit
+							</button>
+						</div>
+					</form>
+				
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

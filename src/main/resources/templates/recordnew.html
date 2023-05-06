@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>User Management System</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+</head>
+<body>
+<nav  class="navbar navbar-expand-md bg-light navbar-red">
+  
+  <a class="navbar-brand" href="#">User Management System</a>
+
+  
+
+  <!-- Navbar links -->
+ 
+ 
+			<div class = "col-lg-3">
+				<a th:href = "@{/}" > Add User</a>
+			</div>
+</nav>
+
+<br>
+
+
+
+	<div >
+		<div >
+			<h1> Users  List</h1>
+		</div>
+		
+		
+		</div>
+		
+		<br>
+
+
+		<table class="table table-sm">
+			<thead >
+				<tr>
+					<th> user Name</th>
+					<th> user Email</th>
+					<th> user City </th>
+					<th> Actions </th>
+				</tr>
+			</thead>
+			
+			<tbody>
+				<tr th:each = "sn: ${name}">
+					<td th:text = "${sn.name}"></td>
+					<td th:text = "${sn.email}"></td>
+					<td th:text = "${sn.city}"></td>
+					<td>
+						<a th:href = "@{/user/update/{id}(id=${sn.id})}"
+						 >Update</a>
+						
+						<a th:href = "@{/user/delete/{id}(id=${sn.id})}"
+						 >Delete</a>
+						 
+					</td>
+				</tr>
+			</tbody>
+		
+		</table>
+		
+	</div>
+</body>
+</html>
